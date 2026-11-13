@@ -1,0 +1,16 @@
+{
+  "doctype": "Page",
+  "name": "manufacturing-dashboard",
+  "title": "Manufacturing Dashboard",
+  "module": "Quantumberg Manufacturing Dashboard",
+  "standard": "Yes",
+  "icon": "dashboard",
+  "roles": [
+    {
+      "role": "Manufacturing Manager"
+    },
+    {
+      "role": "System Manager"
+    }
+  ]
+}

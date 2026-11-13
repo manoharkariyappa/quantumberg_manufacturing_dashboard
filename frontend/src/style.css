@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+/*
+ * Quantumberg Manufacturing Dashboard
+ * Use the existing Frappe Desk typography.
+ */
+
+@theme {
+  --color-qb-purple: #493b91;
+  --color-qb-purple-dark: #40347f;
+  --color-qb-pink: #c43f9d;
+  --color-qb-primary: #6040c5;
+  --color-qb-blue: #3987f5;
+  --color-qb-green: #20bf88;
+  --color-qb-orange: #ffad19;
+  --color-qb-bg: #f4f6fc;
+  --color-qb-card: #ffffff;
+  --color-qb-border: #e1e6f2;
+  --color-qb-text: var(--text-color, #333333);
+  --color-qb-muted: var(--text-muted, #78809b);
+}
+
+/* Inherit Frappe's font family and base sizing */
+html,
+body,
+#app {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-stack, inherit);
+  font-size: var(--text-base, 14px);
+  line-height: 1.5;
+  color: var(--text-color, #333333);
+  background: var(--subtle-fg, #f4f6fc);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Keep dashboard typography compact and consistent */
+.manufacturing-dashboard {
+  font-family: var(--font-stack, inherit);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-color, #333333);
+}
+
+.manufacturing-dashboard h1,
+.manufacturing-dashboard h2,
+.manufacturing-dashboard h3,
+.manufacturing-dashboard h4,
+.manufacturing-dashboard p {
+  font-family: inherit;
+}
+
+/* Prevent oversized headings inherited from component styles */
+.manufacturing-dashboard h1 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.manufacturing-dashboard h2 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.manufacturing-dashboard h3 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   Quantumberg glass theme (synced with project management)
+   ============================================================ */
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) {
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 420px at 100% -10%, #f3ecff 0%, transparent 60%),
+    radial-gradient(760px 420px at 0% 0%, #fbeff8 0%, transparent 55%),
+    linear-gradient(180deg, #f8f7fd 0%, #fdfcff 55%, #f8f6fc 100%);
+  background-attachment: fixed;
+}
+
+/* Header: Quantumberg purple -> pink glass ------------------- */
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header.qb-card {
+  position: relative;
+  color: #ffffff;
+  background:
+    radial-gradient(900px 260px at 100% -40%, rgb(255 255 255 / 18%), transparent 60%),
+    radial-gradient(720px 260px at 0% -60%, rgb(237 233 254 / 24%), transparent 62%),
+    linear-gradient(120deg, #493b91 0%, #7a3f9f 52%, #c43f9d 100%);
+  border: 1px solid rgb(255 255 255 / 22%);
+  box-shadow:
+    0 16px 38px rgb(73 59 145 / 26%),
+    inset 0 1px 0 rgb(255 255 255 / 24%);
+  backdrop-filter: blur(6px);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  content: "";
+  background: linear-gradient(180deg, rgb(255 255 255 / 95%), rgb(255 255 255 / 20%));
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header-title h1 {
+  color: #ffffff;
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header-title p {
+  color: rgb(255 255 255 / 78%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header-icon {
+  background: rgb(255 255 255 / 18%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 25%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header .dashboard-control {
+  height: 34px;
+  color: var(--text-color, #333333);
+  background: #ffffff;
+  border: 1px solid #e1e6f2;
+  box-shadow: 0 2px 6px rgb(31 41 55 / 6%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header .dashboard-control select,
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header .dashboard-control input {
+  color: var(--text-color, #333333);
+  color-scheme: light;
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header .dashboard-control select option {
+  color: #333333;
+  background: #ffffff;
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header .dashboard-control-icon {
+  color: #6040c5;
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header .dashboard-control-chevron {
+  color: #78809b;
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-header .dashboard-control-label {
+  color: #78809b;
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-button {
+  height: 34px;
+  padding: 0 11px;
+  color: #493b91;
+  background: #ffffff;
+  border: 1px solid #d9d3f0;
+  border-radius: 7px;
+  box-shadow: 0 6px 16px rgb(73 59 145 / 12%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-button:hover {
+  color: #3a2f78;
+  background: #f8f5ff;
+  border-color: #c7bde8;
+  box-shadow: 0 8px 20px rgb(73 59 145 / 18%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .dashboard-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+/* KPI cards: Quantumberg purple -> pink glass ---------------- */
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card {
+  color: #ffffff;
+  border: 1px solid rgb(255 255 255 / 22%);
+  background:
+    radial-gradient(620px 220px at 100% -25%, rgb(255 255 255 / 20%), transparent 62%),
+    linear-gradient(140deg, #493b91 0%, #6d3f9e 46%, #c43f9d 100%);
+  box-shadow:
+    0 14px 32px rgb(73 59 145 / 24%),
+    inset 0 1px 0 rgb(255 255 255 / 24%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card:hover {
+  border-color: rgb(255 255 255 / 34%);
+  box-shadow:
+    0 18px 40px rgb(73 59 145 / 32%),
+    inset 0 1px 0 rgb(255 255 255 / 28%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card:focus-visible {
+  outline-color: #ffffff;
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-title {
+  color: rgb(255 255 255 / 80%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-value {
+  color: #ffffff;
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-description {
+  color: rgb(255 255 255 / 76%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-icon,
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-icon-purple,
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-icon-blue,
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-icon-green,
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-icon-orange {
+  color: #ffffff;
+  background: rgb(255 255 255 / 18%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 22%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-footer {
+  color: rgb(255 255 255 / 78%);
+  border-top: 1px solid rgb(255 255 255 / 22%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-footer svg {
+  color: rgb(255 255 255 / 80%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .kpi-grid > .kpi-card .kpi-bottom-border {
+  background: linear-gradient(90deg, rgb(255 255 255 / 90%), rgb(255 255 255 / 35%));
+}
+
+/* White chart / report cards: top accent + refined elevation -- */
+:is(#quantumberg-manufacturing-dashboard-root, #app) .qb-card:not(.dashboard-header) {
+  position: relative;
+  border-color: #e6e2f3;
+  box-shadow: 0 4px 16px rgb(73 59 145 / 6%);
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .qb-card:not(.dashboard-header)::before {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 2;
+  height: 3px;
+  content: "";
+  background: linear-gradient(90deg, #493b91, #c43f9d);
+  border-radius: 12px 12px 0 0;
+  pointer-events: none;
+}
+
+:is(#quantumberg-manufacturing-dashboard-root, #app) .qb-card:not(.dashboard-header):hover {
+  border-color: #d9d1ef;
+  box-shadow: 0 12px 28px rgb(73 59 145 / 10%);
+}
+
+/* Soft tinted card headers */
+:is(#quantumberg-manufacturing-dashboard-root, #app) .qb-card:not(.dashboard-header) .chart-card-header,
+:is(#quantumberg-manufacturing-dashboard-root, #app) .qb-card:not(.dashboard-header) .report-library-header {
+  background: linear-gradient(180deg, #faf8ff, #ffffff);
+}
